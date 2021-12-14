@@ -9,12 +9,12 @@
 	<packaging>pom</packaging>
 
 	<properties>
-		<aspectj.version>1.6.5</aspectj.version>
-		<spring.version>3.0.0.M4</spring.version>
-		<spring-security.version>3.0.0.M2</spring-security.version>
-		<spring-batch.version>2.0.3.RELEASE</spring-batch.version>
+		<aspectj.version>1.9.7</aspectj.version>
+		<spring.version>5.3.13</spring.version>
+		<spring-security.version>5.6.0</spring-security.version>
+		<spring-batch.version>4.3.4</spring-batch.version>
 		<mockito.version>1.8.0</mockito.version>
-		<junit.version>4.6</junit.version>
+		<junit.version>4.13.2</junit.version>
 		<jstl.version>1.2</jstl.version>
 		<servlet.version>2.5</servlet.version>
 		<ejb.version>3.0</ejb.version>
@@ -24,7 +24,7 @@
 		<ognl.version>2.6.7</ognl.version>
 		<hsqldb.version>1.8.0.7</hsqldb.version>
 		<commons-dbcp.version>1.2.2</commons-dbcp.version>
-		<commons-collection.version>3.2.1</commons-collection.version>
+		<commons-collection.version>3.2.2</commons-collection.version>
 		<commons-beanutils.version>1.7.0</commons-beanutils.version>
 		<slf4j.version>1.4.2</slf4j.version>
 		<log4j.version>1.2.15</log4j.version>
@@ -32,6 +32,10 @@
 		<oscache.version>2.4</oscache.version>
 		<cglib.version>2.1_3</cglib.version>
 		<dbunit.version>2.4.3</dbunit.version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<mojo.java.target>1.8</mojo.java.target>
+		<project.build.java.target>1.8</project.build.java.target>
 	</properties>
 
 	<dependencies>
@@ -53,12 +57,14 @@
 			<version>${spring.version}</version>
 			<scope>compile</scope>
 		</dependency>
+		<!--
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-asm</artifactId>
 			<version>${spring.version}</version>
 			<scope>compile</scope>
 		</dependency>
+		-->	
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-beans</artifactId>
@@ -136,11 +142,13 @@
 			<artifactId>spring-test</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
+		<!--
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-instrument-classloading</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
+		-->	
 
 		<dependency>
 			<groupId>org.springframework.security</groupId>
@@ -327,10 +335,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>1.5</source>
-					<target>1.5</target>
-				</configuration>
+				<version>3.8.1</version>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

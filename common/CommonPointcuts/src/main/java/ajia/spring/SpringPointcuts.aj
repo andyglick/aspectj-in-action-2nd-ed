@@ -13,16 +13,19 @@ See the License for the specific language governing permissions and
 limitations under the License. 
 */
 
-//Listing 2.2 Class to exercise the message-delivery functionality
-//
-package ajia.main;
+package ajia.spring;
 
-import ajia.messaging.MessageCommunicator;
+import org.springframework.jdbc.core.JdbcOperations;
+// import org.springframework.jdbc.core.simple.SimpleJdbcOperations;
 
-public class Main {
-	public static void main(String[] args) {
-		MessageCommunicator messageCommunicator = new MessageCommunicator();
-		messageCommunicator.deliver("Wanna learn AspectJ?");
-		messageCommunicator.deliver("Harry", "having fun?");
-	}
+public aspect SpringPointcuts {
+    public pointcut jdbcTemplateCall()
+        : call(* JdbcOperations+.*(..))
+        || call(* SimpleJdbcCallOperations+.*(..))
+        || call(* SimpleJdbcInsertOperations+.*(..));
+
+    public pointcut jdbcTemplateExecution()
+        : call(* JdbcOperations+.*(..))
+        || call(* SimpleJdbcCallOperations+.*(..))
+        || call(* SimpleJdbcInsertOperations+.*(..));
 }
