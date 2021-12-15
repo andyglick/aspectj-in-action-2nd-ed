@@ -8,9 +8,9 @@
 		<artifactId>common-aspectj</artifactId>
 		<version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>CommonPointcuts</artifactId>
+    <artifactId>common-pointcuts</artifactId>
     <packaging>jar</packaging>
-    <name>CommonPointcuts</name>
+    <name>common-pointcuts</name>
 </project>
 
 
